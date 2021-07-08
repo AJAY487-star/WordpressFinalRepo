@@ -1,0 +1,22 @@
+version: 0.2
+
+env:
+   variables:
+     db_name: "ajay"
+   parameter-store:
+           db_user: "/ajay/dbuser"
+           db_pass: "/ajay/dbpass"
+           db_url: "/ajay/dburl"
+           
+
+phases:
+    build:
+        commands:
+            - sed -i 's/database_name_here/'$db_name'/' wp-config.php
+            - sed -i 's/username_here/'$db_user'/' wp-config.php
+            - sed -i 's/password_here/'$db_pass'/' wp-config.php
+            - sed -i 's/localhost/'$db_url'/' wp-config.php
+
+artifacts:
+        files:
+           - '**/*'
