@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+        - source: /wordpress
+          destination: /var/www/html
+hooks:
+        BeforeInstall:
+                - location: Scripts/install_software.sh
+                  timeout: 300
+                  runas: root
+                - location: Scripts/start_server.sh
+                  timeout: 300
+                  runas: root
+        AfterInstall:
+                - location: Scripts/provide_permission.sh
+                  timeout: 300
+                  runas: root
+                 
