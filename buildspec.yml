@@ -12,10 +12,10 @@ env:
 phases:
     build:
         commands:
-            - sed -i 's/database_name_here/'$db_name'/' /wordpress/wp-config.php
-            - sed -i 's/username_here/'$db_user'/' /wordpress/wp-config.php
-            - sed -i 's/password_here/'$db_pass'/' /wordpress/wp-config.php
-            - sed -i 's/localhost/'$db_url'/' /wordpress/wp-config.php
+            - sed -i 's/database_name_here/'$db_name'/' wordpress/wp-config.php
+            - sed -i 's/username_here/'$db_user'/' wordpress/wp-config.php
+            - sed -i 's/password_here/'$db_pass'/' wordpress/wp-config.php
+            - sed -i 's/localhost/'$db_url'/' wordpress/wp-config.php
 
 artifacts:
         files:
